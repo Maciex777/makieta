@@ -39,7 +39,45 @@
 <div class="jumbotron" style="">
   <div class="container text-center">
     <h2>Steampunk design & fashion</h2>      
-    <h3>Best steampunk design ideas</h3>	
+    <h3>Best steampunk design ideas</h3>
+	<button type="button" class="rozwinBaze btn btn-default btn-lg">Add new tile</button>		
+  <div class="baza" style="background-color:LightGray;border:3px ridge #505050;padding:15px;margin:20px 5px 10px 5px;">	
+	<div id="contact_form">
+	<form class="col-xs-12 col-sm-offset-2 col-sm-8 col-xs-offset-right-2 form-group">
+         <input class="col-xs-12 text-center " type="file" id="imgInp" >
+		 
+	</form>
+	<div class="col-xs-12 thumbs">
+
+	</div>
+		<form class="col-xs-12 col-sm-8 col-sm-offset-2 form-group" name="formularz" action="">
+			<fieldset>
+			<label for="name" id="name_label">Name</label>
+			<input type="text" class="form-control text-input" name="name" id="name" value=""/>
+			<label class="error" for="name" id="name_error">This field is required.</label>
+			 
+			<label for="subject" id="subject_label">Enter description text :</label>
+			<input type="text" class="form-control text-input" name="subject" id="subject" value="">
+			<label class="error" for="subject" id="subject_error">This field is required.</label>
+			
+			<label for="date" id="date_label">Enter date :</label>
+			<input type="text"  class="form-control text-input" name="date" id="date" value=""/>
+			<label class="error" for="subject" id="subject_error">This field is required.</label>
+			 
+			  <br />
+			<input type="submit" name="submit" class="col-xs-12 col-sm-5 dodaj button" id="submit_btn" value="Add" />
+			<input class="col-xs-12 col-sm-5 text-center zakoncz btn-default text-right" type="submit" value="Exit" name="finish" style="float:right"/>
+			</fieldset>
+		</form>
+	<div>
+		
+	
+	</div>
+	</div>
+	<div id="message" class=col-sm-12"><h2 style="visibility:hidden;">Form Submitted!</h2></div>
+  
+</div>
+</div>
 </div>
   
 <div class="container-fluid bg-3 text-center">    
@@ -77,13 +115,56 @@
     <div class="tile a11 col-xs-6 col-sm-4">
       <div class="img-responsive" style="background:url('assets/images/chopper.jpg') no-repeat center top;background-size:100% 50%;background-color:white;"><div class="img-foot text-left"><h5>November 25, 2015</h5><a href="#" target="_blank">How to find design inspiration in the simple things around you</a></div><img class="foto" src="assets/images/foto.png" alt="author"/></div>
 	</div>
+
+	
+	<div class="tile hiddenn col-xs-6 col-sm-4">
+		<div class="img-responsive" style="background:url('assets/images/guitar.jpg') no-repeat center top;background-size:100% 50%;background-color:white;"><div class="img-foot text-left"><h5>November 25, 2015</h5><a href="#" target="_blank">The only guide to choising website photos you'll ever need</a></div><img class="foto" src="assets/images/foto.png" alt="author"/></div>
+	</div>	
+	<div class="tile hiddenn col-xs-6 col-sm-4">
+		<div class="img-responsive" style="background:url('assets/images/bike.jpg') no-repeat center top;background-size:100% 50%;background-color:white;"><div class="img-foot text-left"><h5>November 25, 2015</h5><a href="#" target="_blank">Growth hack your way to a successful freelance career</a></div><img class="foto" src="assets/images/foto.png" alt="author"/></div>
+	</div>	
+	<div class="tile hiddenn col-xs-6 col-sm-4">
+		<div class="img-responsive" style="background:url('assets/images/girl5.jpg') no-repeat center top;background-size:100% 50%;background-color:white;"><div class="img-foot text-left"><h5>November 25, 2015</h5><a href="#" target="_blank">Get 80% off dslr photography course bundle</a></div><img class="foto" src="assets/images/foto.png" alt="author"/></div>
+	</div>	
+	<div class="tile hiddenn col-xs-6 col-sm-4">
+		<div class="img-responsive" style="background:url('assets/images/interior.jpg') no-repeat center top;background-size:100% 50%;background-color:white;"><div class="img-foot text-left"><h5>November 25, 2015</h5><a href="#" target="_blank">How to find design inspiration in the simple things around you</a></div><img class="foto" src="assets/images/foto.png" alt="author"/></div>
+	</div>	
+	<div class="tile hiddenn col-xs-6 col-sm-4">
+		<div class="img-responsive" style="background:url('assets/images/girl7.jpg') no-repeat center top;background-size:100% 50%;background-color:white;"><div class="img-foot text-left"><h5>November 25, 2015</h5><a href="#" target="_blank">The only guide to choising website photos you'll ever need</a></div><img class="foto" src="assets/images/foto.png" alt="author"/></div>
+	</div>	
+	<div class="tile hiddenn col-xs-6 col-sm-4">
+		<div class="img-responsive" style="background:url('assets/images/girl9.jpg') no-repeat center top;background-size:100% 50%;background-color:white;"><div class="img-foot text-left"><h5>November 25, 2015</h5><a href="#" target="_blank">How to find design inspiration in the simple things around you</a></a></div><img class="foto" src="assets/images/foto.png" alt="author"/></div>
+	</div>	
+
+	<div class="obraz" style="display:none">
+			<img id="blah" src="#" alt="your image" />
+	</div>
+
+	
   </div>
 </div>
-  
+
 <footer class="container-fluid text-center">
   <p>Created by Maciej Molenda</p>
 </footer>
-  
+
+<button id="myBtn" title="Go to top"></button>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $("#imgInp").change(function(){
+        readURL(this);
+    });
+</script>
 </body>
-</html>  
- 
+</html>
