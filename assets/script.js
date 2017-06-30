@@ -171,7 +171,7 @@ $(document).ready(function(){
 			$('.nowy').hide();
 	
 			//Ustawienie tekstu nowego kafla 
-			var $subject = $( "#subject" ).val();
+			var $subject = $( "#subject" ).val().match(/.{1,20}/g).join("<br/>");
 			var $date = $( "#date" ).val();
 			$('.description').html($subject);
 		    $('.termin').html($date);
